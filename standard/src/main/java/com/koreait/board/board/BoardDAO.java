@@ -37,8 +37,13 @@ public class BoardDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		String sql = "SELECT " + "	A.iboard, A.title, A.iuser, A.regdt " + "	, B.unm " + " FROM t_board A "
-				+ " INNER JOIN t_user B " + " ON A.iuser = B.iuser " + " ORDER BY iboard DESC ";
+		String sql = "SELECT " 
+				+ "	A.iboard, A.title, A.iuser, A.regdt " 
+				+ "	, B.unm " 
+				+ " FROM t_board A "
+				+ " INNER JOIN t_user B " 
+				+ " ON A.iuser = B.iuser " 
+				+ " ORDER BY iboard DESC ";
 		try {
 			con = DBUtils.getCon();
 			ps = con.prepareStatement(sql);
